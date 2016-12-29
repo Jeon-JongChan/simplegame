@@ -1,7 +1,7 @@
 import table
 
 class Ball:
-    def __init__(self,table,line,width = 10,height = 10,color = "green",x_speed = 0,y_speed = 0,level = 0):
+    def __init__(self,table,line,width = 10,height = 10,color = "black",x_speed = 0,y_speed = 0,level = 0):
         self.width = width
         self.height = height
         self.color = color
@@ -13,9 +13,15 @@ class Ball:
         self.y_speed = y_speed
         if  self.line.map_x_pos[level][0][0] == self.line.map_x_pos[level][0][1]: #첫 구간의 라인이 세로라인일 경우
             self.origin_x = int((self.line.map_x_pos[level][0][0] + self.line.map_x_pos[level][1][0])/2) +5
-            self.origin_y = self.line.map_y_pos[level][0][1] + 5
+            if self.line.map_y_pos[level][0][0] == self.line.map_y_pos[level][1][0]:
+                self.origin_y = self.line.map_y_pos[level][0][1] + self.height
+            else:
+                self.origin_y = self.line.map_y_pos[level][0][1] - self.height
         elif self.line.map_y_pos[level][0][0] == self.line.map_y_pos[level][0][1]: #첫 구간의 라인이 가로라인일 경우
-            self.origin_x = self.line.map_x_pos[level][0][0] + 5
+            if self.line.map_x_pos[level][0][0] == self.line.map_x_pos[level][1][0]:
+                self.origin_x = self.line.map_x_pos[level][0][0] + self.width
+            else:
+                self.origin_x = self.line.map_x_pos[level][0][1] - self.width
             self.origin_y = int((self.line.map_y_pos[level][0][0] + self.line.map_y_pos[level][1][0])/2) +5
         self.x_pos = self.origin_x
         self.y_pos = self.origin_y

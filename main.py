@@ -5,7 +5,7 @@ window = Tk()
 window.title("For servival!")
 
 my_table = table.Table(window)
-my_map = gamemap.Gamemap(table = my_table,level = 2)
+my_map = gamemap.Gamemap(table = my_table,level = 4)
 my_ball = ball.Ball(table = my_table,line = my_map,level = my_map.level)
 my_obstacle = obstacle.Obstacle(table = my_table,ball = my_ball,level = my_map.level)
 
@@ -27,3 +27,4 @@ window.bind("<Down>",my_ball.move_down)
 window.bind("<Right>",my_ball.move_right)
 window.bind("<Left>",my_ball.move_left)
 window.mainloop()
+    
