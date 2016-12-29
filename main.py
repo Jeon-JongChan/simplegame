@@ -11,12 +11,11 @@ my_obstacle = obstacle.Obstacle(table = my_table,ball = my_ball,level = my_map.l
 
 def game_flow():
     if my_obstacle.obstacle_ball_collision():
-        print("debug")
         my_ball.restart_pos()
     if my_ball.x_pos > my_map.map_x_des[my_map.level][0] and my_ball.x_pos < my_map.map_x_des[my_map.level][1]:
         if my_ball.y_pos > my_map.map_y_des[my_map.level][0] and my_ball.y_pos < my_map.map_y_des[my_map.level][1]:
             my_ball.stop_ball()
-    print(my_ball.x_pos)
+    
     my_obstacle.move_next()
 
     window.after(20, game_flow)

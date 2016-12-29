@@ -15,6 +15,8 @@ class Gamemap:
         
         self.map_x_pos.append([[0,500],[0,300],  [300,300],[500,500],[300,800],[500,800]])   #level 1
         self.map_y_pos.append([[20,20],[110,110],[110,680],[20,580], [680,680],[580,580]])   #level 1
+        self.map_x_des.append([0,20])
+        self.map_y_des.append([580,680])
         
         self.map_x_pos.append([[20,800],[90,800], [20,20], [90,90],  [20,800], [90,800]])    #level 2
         self.map_y_pos.append([[20,20], [120,120],[20,680],[120,580],[680,680],[580,580]])   #level 2
