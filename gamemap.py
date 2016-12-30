@@ -34,6 +34,10 @@ class Gamemap:
         self.map_y_des.append([320,390])
         
         self.table = table
+        self.draw_map()
+        
+    def draw_map(self):
+        self.level = self.table.level
         self.map_line_num = len(self.map_x_pos[self.level])
 
         for i in range(0,self.map_line_num):

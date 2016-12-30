@@ -1,12 +1,12 @@
 from tkinter import *
 
 class Table:
-    def __init__(self,window,color = "white", line_color = "black",
+    def __init__(self,window,level = 0,color = "white", line_color = "black",
                  width = 800,height = 800):
         self.width = width
         self.height = height
         self.color = color
-
+        self.level = level
         self.canvas = Canvas(window, bg=self.color,height = self.height,
                              width = self.width)
         self.canvas.pack()
